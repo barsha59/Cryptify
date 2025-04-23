@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cryptify - AES File Encryptor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white shadow-xl p-8 rounded-2xl w-full max-w-md">
+    <h1 class="text-3xl font-bold text-center text-indigo-600 mb-6">🔐 Cryptify</h1>
+    
+    <form method="POST" action="/process" enctype="multipart/form-data" class="space-y-4">
+      <input 
+        type="file" 
+        name="file" 
+        required 
+        class="w-full p-2 border border-gray-300 rounded" 
+      />
+      <input 
+        type="text" 
+        name="key" 
+        placeholder="Enter encryption key..." 
+        required 
+        class="w-full p-2 border border-gray-300 rounded" 
+      />
+      
+      <div class="flex justify-between">
+        <button 
+          type="submit" 
+          name="mode" 
+          value="encrypt" 
+          class="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600"
+        >
+          Encrypt
+        </button>
+        <button 
+          type="submit" 
+          name="mode" 
+          value="decrypt" 
+          class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+        >
+          Decrypt
+        </button>
+      </div>
+    </form>
+    
+    <div class="text-sm text-gray-500 mt-4 text-center">
+      Use the same key for encryption and decryption. Keep it safe!
+    </div>
+  </div>
+</body>
+</html>
